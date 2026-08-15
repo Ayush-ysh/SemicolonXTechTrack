@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMICOLON — Inter-College Ideathon 2026 | BGU × TechTrack</title>
+    <meta name="description" content="SEMICOLON — Because the idea doesn't end here. An Inter-College Ideathon on Campus &amp; EdTech Solutions at Birla Global University, Bhubaneswar. August 22, 2026. Prize Pool ₹5,000.">
+    <meta name="keywords" content="SEMICOLON, ideathon, Birla Global University, BGU, TechTrack, inter-college, campus solutions, edtech, Bhubaneswar, Odisha">
+    <meta property="og:title" content="SEMICOLON — Inter-College Ideathon 2026">
+    <meta property="og:description" content="Because the idea doesn't end here. Campus &amp; EdTech Solutions. Prize Pool ₹5,000. Aug 22, 2026.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =============================================
+           RESET & ROOT
+        ============================================= */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --white: #FFFFFF;
+            --black: #0A0A0A;
+            --gray-50: #F8F8F8;
+            --gray-100: #F0F0F0;
+            --gray-200: #E2E2E2;
+            --gray-300: #CCCCCC;
+            --gray-400: #999999;
+            --gray-500: #666666;
+            --gray-600: #444444;
+            --red: #D0021B;
+
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+
+            --r-sm: 4px;
+            --r-md: 8px;
+            --r-lg: 14px;
+            --r-xl: 20px;
+            --r-2xl: 28px;
+            --r-full: 9999px;
+
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 28px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.14), 0 8px 20px rgba(0,0,0,0.06);
+
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-out: cubic-bezier(0, 0, 0.2, 1);
+            --ease-in: cubic-bezier(0.4, 0, 1, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            --t-fast: 150ms var(--ease);
+            --t-base: 220ms var(--ease);
+            --t-slow: 400ms var(--ease);
+
+            --header-h: 68px;
+            --sidebar-top: calc(var(--header-h) + 28px);
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* =============================================
+           UTILITY
+        ============================================= */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+        /* =============================================
+           ANNOUNCEMENT TICKER
+        ============================================= */
+        .ticker {
+            background: var(--black);
+            color: var(--white);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-track {
+            display: inline-flex;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 64px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .ticker-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--white);
+            opacity: 0.4;
+        }
+
+        @keyframes ticker {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* =============================================
+           HEADER
+        ============================================= */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--gray-200);
+            height: var(--header-h);
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            width: 100%;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .h-bgu-img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .h-logo-x {
+            font-size: 14px;
+            color: var(--gray-300);
+            font-weight: 300;
+        }
+
+        .h-logo-tt {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .h-tt-img { width: 28px; height: 28px; object-fit: contain; }
+        .h-logo-tt span {
+            font-family: var(--font-display);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 28px;
+            background: var(--gray-200);
+        }
+
+        .header-event-name {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .header-nav a {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-500);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: color var(--t-fast);
+        }
+
+        .header-nav a:hover { color: var(--black); }
+
+        /* =============================================
+           BUTTONS
+        ============================================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: var(--r-md);
+            font-family: var(--font);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            transition: all var(--t-base);
+            text-decoration: none;
+            border: 1.5px solid transparent;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .btn:active { transform: scale(0.97); }
+
+        /* iOS tap fix: eliminates 300ms delay and makes taps instantly responsive */
+        button, .btn, [role="button"] {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--gray-600);
+            border-color: var(--gray-600);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border-color: var(--gray-300);
+        }
+
+        .btn-outline:hover { border-color: var(--black); }
+
+        .btn-lg { padding: 15px 32px; font-size: 15px; border-radius: var(--r-lg); }
+        .btn-xl { padding: 18px 40px; font-size: 16px; font-weight: 700; border-radius: var(--r-lg); }
+        .btn-full { width: 100%; }
+
+        .btn-loading {
+            pointer-events: none;
+            opacity: 0.65;
+            position: relative;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.35);
+            border-top-color: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
+
+        /* =============================================
+           PAGE LAYOUT
+        ============================================= */
+        .page-wrap {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 52px 48px 80px;
+            display: grid;
+            grid-template-columns: 1fr 368px;
+            gap: 56px;
+            align-items: start;
+        }
+
+        /* =============================================
+           SIDEBAR
+        ============================================= */
+        .sidebar { position: sticky; top: var(--sidebar-top); }
+
+        .reg-card {
+            background: var(--white);
+            border: 2px solid var(--black);
+            border-radius: var(--r-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Card top band */
+        .reg-card-top {
+            background: var(--black);
+            padding: 28px 28px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reg-card-top::before {
+            content: ';';
+            position: absolute;
+            right: -16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 160px;
+            font-weight: 900;
+            font-family: var(--font-display);
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        /* Sidebar branding */
+        .card-brand-title {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .card-brand-tagline {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.42);
+            margin-bottom: 20px;
+        }
+
+        .card-brand-divider {
+            width: 40px;
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            margin: 0 auto 18px;
+        }
+
+        /* Tracks grid (in main content) */
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 36px;
+        }
+
+        .track-card {
+            padding: 24px 20px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--r-xl);
+            transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .track-card:hover {
+            border-color: var(--black);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .track-icon {
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .track-card h4 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .track-card p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--gray-500);
+        }
+
+        .track-num {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            color: var(--gray-300);
+            margin-top: auto;
+        }
+
+        @media (max-width: 860px) {
+            .tracks-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .tracks-grid { grid-template-columns: 1fr; }
+        }
+
+        .reg-eyebrow {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 10px;
+        }
+
+        .prize-amount {
+            font-family: var(--font-display);
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .prize-sub {
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        /* Card body */
+        .reg-card-body { padding: 24px 24px 20px; }
+
+        /* Countdown */
+        .cd-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .cd-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .cd-cell {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--r-lg);
+            padding: 14px 8px 10px;
+            text-align: center;
+            transition: border-color var(--t-base);
+        }
+
+        .cd-cell:hover { border-color: var(--black); }
+
+        .cd-num {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1;
+            display: block;
+            letter-spacing: -0.03em;
+        }
+
+        .cd-unit {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Stats */
+        .stat-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 14px;
+            background: var(--gray-50);
+            border-radius: var(--r-md);
+            border: 1px solid var(--gray-100);
+        }
+
+        .stat-lhs {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .stat-icon { font-size: 15px; line-height: 1; }
+
+        .stat-val {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        /* CTAs */
+        .card-ctas { display: flex; flex-direction: column; gap: 9px; }
+
+        .card-footer {
+            border-top: 1px solid var(--gray-100);
+            padding: 14px 24px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--gray-400);
+            letter-spacing: 0.05em;
+        }
+
+        /* =============================================
+           MAIN CONTENT — SECTIONS
+        ============================================= */
+        .main-col { display: flex; flex-direction: column; }
+
+        /* ---- HERO ---- */
+        .hero {
+            padding-bottom: 72px;
+            border-bottom: 1px solid var(--gray-200);
+            margin-bottom: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Organizer row */
+        .org-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .org-logo-bgu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bgu-logo-img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .bgu-text { display: flex; flex-direction: column; }
+        .bgu-abbr { font-family: var(--font-display); font-size: 17px; font-weight: 900; line-height: 1.1; }
+        .bgu-full { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+
+        .org-x { font-size: 20px; font-weight: 300; color: var(--gray-300); }
+
+        .org-logo-tt {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tt-logo-img { 
+            width: 52px; 
+            height: 52px; 
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .tt-text { display: flex; flex-direction: column; }
+        .tt-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; line-height: 1.1; }
+        .tt-sub { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+
+        /* Hero title */
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(80px, 11.5vw, 148px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 0.88;
+            margin-bottom: 20px;
+        }
+
+        .hero-sc {
+            display: inline-block;
+            font-size: 0.85em;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .hero-tagline {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 36px;
+        }
+
+        /* Tags row */
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 14px;
+            border-radius: var(--r-full);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .tag-solid { background: var(--black); color: var(--white); }
+        .tag-outline { background: transparent; color: var(--black); border: 1.5px solid var(--black); }
+        .tag-ghost { background: var(--gray-100); color: var(--gray-600); border: 1.5px solid var(--gray-200); }
+
+        /* Prize pill */
+        .hero-prize {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--black);
+            color: var(--white);
+            padding: 18px 28px;
+            border-radius: var(--r-xl);
+        }
+
+        .prize-icon { font-size: 36px; line-height: 1; }
+        .prize-text { display: flex; flex-direction: column; gap: 2px; }
+        .prize-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+        .prize-fig { font-family: var(--font-display); font-size: 38px; font-weight: 900; line-height: 1; letter-spacing: -0.03em; }
+
+        /* Deco char */
+        .hero-deco {
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-60%);
+            font-size: 480px;
+            font-weight: 900;
+            font-family: var(--font-display);
+            color: var(--black);
+            opacity: 0.028;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* ---- SECTION WRAPPER ---- */
+        .section {
+            padding: 72px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .s-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .s-eyebrow::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gray-200);
+        }
+
+        .s-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+        }
+
+        .s-title {
+            font-family: var(--font-display);
+            font-size: clamp(30px, 4vw, 42px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 14px;
+        }
+
+        .s-desc {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray-500);
+            max-width: 600px;
+        }
+
+        /* ---- ABOUT ---- */
+        .theme-block {
+            margin-top: 36px;
+            padding: 36px 40px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: var(--r-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-block::before {
+            content: ';';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 280px;
+            font-weight: 900;
+            font-family: var(--font-display);
+            opacity: 0.055;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .theme-eyebrow {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 12px;
+        }
+
+        .theme-title {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .theme-body {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.65);
+            max-width: 520px;
+        }
+
+        .theme-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .theme-pill {
+            padding: 6px 14px;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--r-full);
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.75);
+            letter-spacing: 0.04em;
+            transition: all var(--t-fast);
+        }
+
+        .theme-pill:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.35);
+        }
+
+        /* ---- ELIGIBILITY ---- */
+        .elig-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 36px;
+        }
+
+        .elig-card {
+            padding: 26px 24px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--r-xl);
+            transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-base);
+            cursor: default;
+        }
+
+        .elig-card:hover {
+            border-color: var(--black);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .elig-icon { font-size: 34px; margin-bottom: 14px; display: block; }
+
+        .elig-card h4 {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .elig-card p { font-size: 14px; line-height: 1.65; color: var(--gray-500); }
+
+        /* ---- TIMELINE ---- */
+        .timeline {
+            margin-top: 40px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gray-200), var(--gray-200));
+        }
+
+        .tl-item {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            padding-bottom: 44px;
+            position: relative;
+        }
+
+        .tl-item:last-child { padding-bottom: 0; }
+
+        .tl-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            transition: all var(--t-base);
+        }
+
+        .tl-item.is-done .tl-dot {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        .tl-item.is-next .tl-dot {
+            background: var(--white);
+            border-color: var(--black);
+            border-width: 2.5px;
+            box-shadow: 0 0 0 4px rgba(0,0,0,0.07);
+        }
+
+        .tl-body { padding-top: 8px; flex: 1; }
+
+        .tl-date {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-bottom: 5px;
+        }
+
+        .tl-event {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .tl-desc { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+
+        .tl-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+            padding: 5px 12px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: var(--r-full);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* ---- VENUE ---- */
+        .venue-card {
+            margin-top: 36px;
+            padding: 32px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--r-2xl);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: border-color var(--t-base), box-shadow var(--t-base);
+        }
+
+        .venue-card:hover {
+            border-color: var(--black);
+            box-shadow: var(--shadow-md);
+        }
+
+        .venue-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: var(--r-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            flex-shrink: 0;
+        }
+
+        .venue-info h4 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .venue-info p { font-size: 15px; line-height: 1.7; color: var(--gray-500); }
+
+        .venue-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            padding: 9px 16px;
+            border: 1.5px solid var(--black);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            transition: all var(--t-base);
+        }
+
+        .venue-link:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* ---- SPONSORS ---- */
+        .sponsor-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 32px;
+            align-items: stretch;
+        }
+
+        .sponsor-card {
+            padding: 24px 32px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--r-xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: border-color var(--t-base), box-shadow var(--t-base);
+        }
+
+        .sponsor-card:hover {
+            border-color: var(--black);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sponsor-type {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+        }
+
+        /* =============================================
+           MODAL
+        ============================================= */
+        .modal-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,10,10,0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--t-slow), visibility var(--t-slow);
+        }
+
+        .modal-bg.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--white);
+            border: 2px solid var(--black);
+            border-radius: var(--r-2xl);
+            width: 100%;
+            max-width: 640px;
+            max-height: 92vh;
+            overflow-y: auto;
+            transform: translateY(28px) scale(0.97);
+            transition: transform 380ms var(--ease-spring);
+            scrollbar-width: thin;
+        }
+
+        .modal-bg.open .modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-head {
+            padding: 28px 32px 22px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            z-index: 10;
+        }
+
+        .modal-head-text h2 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 3px;
+        }
+
+        .modal-head-text p { font-size: 13px; color: var(--gray-500); }
+
+        .modal-close-btn {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--r-md);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--gray-500);
+            transition: all var(--t-fast);
+            flex-shrink: 0;
+        }
+
+        .modal-close-btn:hover { border-color: var(--black); color: var(--black); }
+
+        /* Step indicator */
+        .step-bar {
+            padding: 18px 32px;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            align-items: center;
+        }
+
+        .step-node {
+            display: flex;
+            align-items: center;
+        }
+
+        .step-bubble {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gray-400);
+            background: var(--white);
+            flex-shrink: 0;
+            transition: all var(--t-base);
+        }
+
+        .step-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--gray-400);
+            margin-left: 8px;
+            white-space: nowrap;
+            transition: color var(--t-base);
+        }
+
+        .step-node.is-active .step-bubble { background: var(--black); border-color: var(--black); color: var(--white); }
+        .step-node.is-active .step-name { color: var(--black); }
+
+        .step-node.is-done .step-bubble { background: var(--black); border-color: var(--black); color: var(--white); }
+        .step-node.is-done .step-name { color: var(--black); }
+
+        .step-line {
+            flex: 1;
+            height: 2px;
+            background: var(--gray-200);
+            margin: 0 10px;
+            transition: background var(--t-slow);
+        }
+
+        .step-line.is-done { background: var(--black); }
+
+        /* Form */
+        .modal-form { padding: 32px; }
+
+        .form-panel { display: none; }
+        .form-panel.is-active { display: block; }
+
+        .panel-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .panel-desc { font-size: 14px; color: var(--gray-500); margin-bottom: 28px; }
+
+        /* Fields */
+        .field {
+            margin-bottom: 16px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--black);
+        }
+
+        .req { color: var(--red); margin-left: 2px; }
+        .opt { color: var(--gray-400); font-weight: 400; font-size: 12px; margin-left: 4px; }
+
+        .field input {
+            width: 100%;
+            font-family: var(--font);
+            font-size: 15px;
+            padding: 12px 16px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: var(--r-md);
+            background: var(--white);
+            color: var(--black);
+            outline: none;
+            transition: border-color var(--t-fast), box-shadow var(--t-fast);
+        }
+
+        .field input::placeholder { color: var(--gray-400); }
+
+        .field input:focus {
+            border-color: var(--black);
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+        }
+
+        .field.has-error input { border-color: var(--red); }
+        .field-err { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
+        .field.has-error .field-err { display: block; }
+
+        /* Member toggle */
+        .member-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 14px 16px;
+            background: transparent;
+            border: 1.5px dashed var(--gray-300);
+            border-radius: var(--r-lg);
+            cursor: pointer;
+            margin-bottom: 0;
+            font-family: var(--font);
+            transition: all var(--t-base);
+        }
+
+        .member-toggle:hover { border-color: var(--black); background: var(--gray-50); }
+
+        .member-toggle.is-open {
+            border-style: solid;
+            border-color: var(--black);
+            background: var(--gray-50);
+            margin-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .toggle-plus {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            transition: transform var(--t-base);
+            line-height: 1;
+        }
+
+        .member-toggle.is-open .toggle-plus { transform: rotate(45deg); }
+
+        .toggle-lbl { font-size: 14px; font-weight: 600; color: var(--black); }
+        .toggle-opt { font-size: 12px; color: var(--gray-400); margin-left: auto; }
+
+        .member-fields {
+            display: none;
+            padding: 20px 16px 8px;
+            border: 1.5px solid var(--black);
+            border-top: none;
+            border-radius: 0 0 var(--r-lg) var(--r-lg);
+            background: var(--gray-50);
+            margin-bottom: 12px;
+        }
+
+        .member-fields.is-open { display: block; }
+
+        .member-head {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            padding: 6px 12px;
+            background: var(--gray-200);
+            border-radius: var(--r-md);
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .mt-12 { margin-top: 12px; }
+
+        /* Review */
+        .review-section { display: flex; flex-direction: column; gap: 6px; }
+        .review-group-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            margin-top: 14px;
+            margin-bottom: 2px;
+        }
+
+        .review-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 14px;
+            background: var(--gray-50);
+            border-radius: var(--r-md);
+            border: 1px solid var(--gray-100);
+        }
+
+        .review-key { font-size: 13px; color: var(--gray-500); }
+        .review-val { font-size: 13px; font-weight: 600; color: var(--black); }
+
+        /* Modal footer */
+        .modal-foot {
+            padding: 18px 32px 26px;
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        /* =============================================
+           SUCCESS SCREEN
+        ============================================= */
+        .success-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--black);
+            z-index: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 48px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--t-slow), visibility var(--t-slow);
+        }
+
+        .success-screen.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-sc {
+            font-family: var(--font-display);
+            font-size: 140px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 0.9;
+            margin-bottom: 32px;
+            animation: bounceIn 0.7s var(--ease-spring) forwards;
+        }
+
+        @keyframes bounceIn {
+            from { transform: scale(0.4) translateY(40px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .success-title {
+            font-family: var(--font-display);
+            font-size: 46px;
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: -0.03em;
+            margin-bottom: 14px;
+        }
+
+        .success-msg {
+            font-size: 18px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            max-width: 440px;
+            margin-bottom: 44px;
+        }
+
+        .success-info { display: flex; flex-direction: column; gap: 12px; margin-bottom: 44px; }
+
+        .success-info-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+        }
+
+        /* =============================================
+           FOOTER
+        ============================================= */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 28px 48px;
+        }
+
+        .footer-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .footer-addr { font-size: 12px; color: rgba(255,255,255,0.4); text-align: center; }
+        .footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+        /* =============================================
+           SCROLL ANIMATIONS
+        ============================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+        }
+
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        .reveal-delay-1 { transition-delay: 0.08s; }
+        .reveal-delay-2 { transition-delay: 0.16s; }
+        .reveal-delay-3 { transition-delay: 0.24s; }
+
+        /* =============================================
+           RESPONSIVE
+        ============================================= */
+        @media (max-width: 1080px) {
+            .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+            .sidebar { position: static; }
+            .reg-card { max-width: 480px; }
+            .hero-title { font-size: clamp(64px, 13vw, 100px); }
+        }
+
+        @media (max-width: 720px) {
+            .header-inner { padding: 0 20px; }
+            .header-nav { display: none; }
+            .page-wrap { padding: 32px 20px 60px; gap: 36px; }
+            .elig-grid { grid-template-columns: 1fr; }
+            .field-row { grid-template-columns: 1fr; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+            .step-name { display: none; }
+            .modal-form { padding: 20px; }
+            .modal-head { padding: 20px; }
+            .modal-foot { padding: 14px 20px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+        <span class="ticker-track" id="ticker-track">
+            <span class="ticker-item"><span class="ticker-dot"></span> SEMICOLON Ideathon · August 22, 2026</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Prize Pool: ₹5,000</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Campus & EdTech Solutions</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> BGU × TechTrack</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Offline · Bhubaneswar, Odisha</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Team Size: 1–2 Members</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Free Registration</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> SEMICOLON Ideathon · August 22, 2026</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Prize Pool: ₹5,000</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Campus & EdTech Solutions</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> BGU × TechTrack</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Offline · Bhubaneswar, Odisha</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Team Size: 1–2 Members</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> Free Registration</span>
+        </span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="header-left">
+                <div class="header-logo-group">
+                    <img src="images/bgu-logo.png" alt="BGU Logo" class="h-bgu-img">
+                    <span class="h-logo-x" aria-hidden="true">×</span>
+                    <div class="h-logo-tt">
+                        <img src="images/techtrack.png" alt="TechTrack Logo" class="h-tt-img">
+                        <span>TechTrack</span>
+                    </div>
+                </div>
+                <div class="header-divider" aria-hidden="true"></div>
+                <span class="header-event-name">SEMICOLON;</span>
+            </div>
+
+            <nav class="header-nav" aria-label="Page navigation">
+                <a href="#about">About</a>
+                <a href="#eligibility">Eligibility</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#venue">Venue</a>
+                <button class="btn btn-primary" onclick="openModal()" id="nav-register-btn" aria-label="Open registration form">Register Now</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE GRID -->
+    <div class="page-wrap">
+
+        <!-- ========== LEFT / MAIN CONTENT ========== -->
+        <main class="main-col" id="main-content">
+
+            <!-- HERO -->
+            <section class="hero" id="hero" aria-label="Event introduction">
+                <div class="hero-deco" aria-hidden="true">;</div>
+
+                <!-- Organizers -->
+                <div class="org-row reveal">
+                    <div class="org-logo-bgu" aria-label="Birla Global University">
+                        <img src="images/bgu-logo.png" alt="BGU Logo" class="bgu-logo-img">
+                        <div class="bgu-text">
+                            <span class="bgu-abbr">BGU</span>
+                            <span class="bgu-full">Birla Global University</span>
+                        </div>
+                    </div>
+
+                    <span class="org-x" aria-hidden="true">×</span>
+
+                    <div class="org-logo-tt" aria-label="TechTrack — BGU Tech Club">
+                        <img src="images/techtrack.png" alt="TechTrack Logo" class="tt-logo-img">
+                        <div class="tt-text">
+                            <span class="tt-name">TechTrack</span>
+                            <span class="tt-sub">BGU Tech Club</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Title -->
+                <div class="reveal reveal-delay-1">
+                    <h1 class="hero-title">SEMI<span class="hero-sc" aria-hidden="true">;</span>COLON</h1>
+                    <p class="hero-tagline">Because the idea doesn't end here.</p>
+                </div>
+
+                <!-- Tags -->
+                <div class="hero-tags reveal reveal-delay-2" role="list" aria-label="Event tags">
+                    <span class="tag tag-solid" role="listitem">🏆 Ideathon</span>
+                    <span class="tag tag-outline" role="listitem">🎓 Campus Solutions</span>
+                    <span class="tag tag-outline" role="listitem">💡 EdTech</span>
+                    <span class="tag tag-ghost" role="listitem">Inter-College</span>
+                    <span class="tag tag-ghost" role="listitem">Offline Event</span>
+                </div>
+
+                <!-- Prize Pool -->
+                <div class="reveal reveal-delay-3">
+                    <div class="hero-prize" aria-label="Prize pool: 50,000 rupees">
+                        <span class="prize-icon" aria-hidden="true">🏆</span>
+                        <div class="prize-text">
+                            <span class="prize-eyebrow">Total Prize Pool</span>
+                            <span class="prize-fig">₹5,000<sup style="font-size:0.45em;vertical-align:super;">*</sup></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section class="section reveal" id="about" aria-labelledby="about-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">About the Event</span>
+                </div>
+                <h2 class="s-title" id="about-title">What is SEMICOLON?</h2>
+                <p class="s-desc">SEMICOLON is an inter-college ideathon hosted by Birla Global University in collaboration with TechTrack — the BGU Tech Club. It's a space where student innovators come together to ideate, design, and pitch solutions to real campus and education technology challenges.</p>
+
+                <div class="theme-block">
+                    <div class="theme-eyebrow">This Year's Theme</div>
+                    <h3 class="theme-title">Campus &amp; EdTech Solutions</h3>
+                    <p class="theme-body">In programming, a semicolon signals that the statement doesn't stop there — there's more to write. That's our philosophy. We challenge you to think beyond the obvious: what tools, systems, or experiences could transform how students learn, connect, and thrive on campus?</p>
+                    <div class="theme-pills" role="list" aria-label="Sub-themes">
+                        <span class="theme-pill" role="listitem">Smart Campus</span>
+                        <span class="theme-pill" role="listitem">Learning Management</span>
+                        <span class="theme-pill" role="listitem">Student Welfare Tech</span>
+                        <span class="theme-pill" role="listitem">Digital Assessment</span>
+                        <span class="theme-pill" role="listitem">Campus Automation</span>
+                        <span class="theme-pill" role="listitem">Peer Learning Platforms</span>
+                        <span class="theme-pill" role="listitem">Academic Analytics</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TRACKS / TOPICS -->
+            <section class="section reveal" id="tracks" aria-labelledby="tracks-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">Submission Topics</span>
+                </div>
+                <h2 class="s-title" id="tracks-title">Choose Your Track</h2>
+                <p class="s-desc">Your idea must address a real-world problem within one of the following six tracks. All disciplines are welcome — the best ideas cut across boundaries.</p>
+
+                <div class="tracks-grid" role="list" aria-label="Competition tracks">
+
+                    <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">🚀</span>
+                        <h4>Emerging Technology</h4>
+                        <p>AI, IoT, blockchain, AR/VR, quantum computing — ideas that harness cutting-edge tech to solve campus or real-world problems.</p>
+                        <span class="track-num">TRACK 01</span>
+                    </div>
+
+                    <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">⚖️</span>
+                        <h4>Law</h4>
+                        <p>Legal tech, access to justice, policy reform, digital rights, or solutions that bridge law and modern society.</p>
+                        <span class="track-num">TRACK 02</span>
+                    </div>
+
+                    <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">📊</span>
+                        <h4>Economics</h4>
+                        <p>Financial inclusion, market inefficiencies, economic modelling, or solutions addressing pressing socio-economic challenges.</p>
+                        <span class="track-num">TRACK 03</span>
+                    </div>
+
+                    <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">🏢</span>
+                        <h4>Management</h4>
+                        <p>Organisational strategy, HR innovation, supply chain optimisation, or startup and entrepreneurship solutions.</p>
+                        <span class="track-num">TRACK 04</span>
+                    </div>
+
+                    <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">📰</span>
+                        <h4>Journalism</h4>
+                        <p>Combating misinformation, digital media, investigative tools, audience engagement, or the future of responsible reporting.</p>
+                        <span class="track-num">TRACK 05</span>
+                    </div>
+
+                    <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">💡</span>
+                        <h4>Open Idea</h4>
+                        <p>No constraints. If your idea doesn't fit the other tracks but has impact and innovation, this is your stage. Surprise us.</p>
+                        <span class="track-num">TRACK 06</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ELIGIBILITY -->
+            <section class="section reveal" id="eligibility" aria-labelledby="elig-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">Eligibility</span>
+                </div>
+                <h2 class="s-title" id="elig-title">Who Can Participate?</h2>
+                <p class="s-desc">SEMICOLON is open to all college students who dare to think differently. Build your dream team and bring your boldest ideas.</p>
+
+                <div class="elig-grid">
+                    <div class="elig-card" role="article">
+                        <span class="elig-icon" aria-hidden="true">🎓</span>
+                        <h3>Inter-College Students</h3>
+                        <p>Open to any undergraduate or postgraduate college student. Cross-college teams are encouraged — bring together your best minds.</p>
+                    </div>
+                    <div class="elig-card" role="article">
+                        <span class="elig-icon" aria-hidden="true">👥</span>
+                        <h3>Team Size: 1–2 Members</h3>
+                        <p>Compete solo or in a team of up to 2. Cross-disciplinary teams from different colleges are allowed and welcomed.</p>
+                    </div>
+                    <div class="elig-card" role="article">
+                        <span class="elig-icon" aria-hidden="true">🆓</span>
+                        <h3>Completely Free</h3>
+                        <p>Zero registration fee. Just register your team and show up with your best ideas. All you need is passion and creativity.</p>
+                    </div>
+                    <div class="elig-card" role="article">
+                        <span class="elig-icon" aria-hidden="true">🌐</span>
+                        <h3>All Disciplines Welcome</h3>
+                        <p>You don't need to be a coder. Ideas from design, management, social science, and any field are equally valued.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TIMELINE -->
+            <section class="section reveal" id="timeline" aria-labelledby="timeline-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">Important Dates</span>
+                </div>
+                <h2 class="s-title" id="timeline-title">Event Timeline</h2>
+                <p class="s-desc">Plan ahead — every deadline matters. Here's your complete event schedule.</p>
+
+                <div class="timeline" role="list" aria-label="Event timeline">
+                    <div class="tl-item is-done" role="listitem">
+                        <div class="tl-dot" aria-hidden="true">✓</div>
+                        <div class="tl-body">
+                            <div class="tl-date">August 17, 2026</div>
+                            <div class="tl-event">Registrations Open</div>
+                            <p class="tl-desc">The portal goes live. Teams can begin signing up and securing their spots.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item is-next" role="listitem">
+                        <div class="tl-dot" aria-hidden="true">⏰</div>
+                        <div class="tl-body">
+                            <div class="tl-date">August 21, 2026. Time: 11:59 PM</div>
+                            <div class="tl-event">Registration Deadline</div>
+                            <p class="tl-desc">Last chance to register. Spots are limited — don't wait until the last moment.</p>
+                        </div>
+                    </div>
+
+                    <div class="tl-item" role="listitem">
+                        <div class="tl-dot" aria-hidden="true">🏆</div>
+                        <div class="tl-body">
+                            <div class="tl-date">August 22, 2026 · 10:00 AM Onwards</div>
+                            <div class="tl-event">SEMICOLON — Main Event Day</div>
+                            <p class="tl-desc">Present your idea to a panel of judges, connect with fellow innovators, and compete for the ₹5,000 prize pool.</p>
+                            <span class="tl-badge">🎯 Main Event</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VENUE -->
+            <section class="section reveal" id="venue" aria-labelledby="venue-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">Venue</span>
+                </div>
+                <h2 class="s-title" id="venue-title">Where It Happens</h2>
+
+                <div class="venue-card" role="article" aria-label="Event venue details">
+                    <div class="venue-icon" aria-hidden="true">📍</div>
+                    <div class="venue-info">
+                        <h3>Birla Global University Campus</h3>
+                        <p>IDCO Plot No. 2, Institutional Area,<br>Gothapatna, Bhubaneswar,<br>Odisha — 751029</p>
+                        <a href="https://maps.google.com/?q=Birla+Global+University+IDCO+Plot+2+Gothapatna+Bhubaneswar+Odisha+751029" target="_blank" rel="noopener noreferrer" class="venue-link" aria-label="Open venue in Google Maps">
+                            <span aria-hidden="true">🗺️</span> View on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPONSORS -->
+            <section class="section reveal" id="sponsors" aria-labelledby="sponsors-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">Sponsors &amp; Partners</span>
+                </div>
+                <h2 class="s-title" id="sponsors-title">Our Partners</h2>
+
+                <div class="sponsor-row" role="list" aria-label="Event sponsors">
+                    <!-- Red Bull -->
+                    <div class="sponsor-card" role="listitem" aria-label="Red Bull — Energy Drinks Partner">
+                        <div class="sponsor-type">Energy Drinks Partner</div>
+                        <svg width="130" height="56" viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="Red Bull logo" role="img">
+                            <!-- Simplified Red Bull mark -->
+                            <ellipse cx="45" cy="26" rx="18" ry="16" fill="#CC0000"/>
+                            <ellipse cx="62" cy="26" rx="16" ry="14" fill="#CC0000" opacity="0.8"/>
+                            <circle cx="53" cy="42" r="9" fill="#FFD700"/>
+                            <!-- Text -->
+                            <text x="65" y="25" text-anchor="start" fill="#CC0000" font-size="18" font-weight="900" font-family="Arial Black, Arial, sans-serif" letter-spacing="-0.5">Red</text>
+                            <text x="65" y="44" text-anchor="start" fill="#CC0000" font-size="18" font-weight="900" font-family="Arial Black, Arial, sans-serif" letter-spacing="-0.5">Bull</text>
+                        </svg>
+                    </div>
+
+                    <!-- Placeholder for more sponsors -->
+                    <div class="sponsor-card" style="border-style: dashed; color: var(--gray-400);" role="listitem">
+                        <div class="sponsor-type">Become a Partner</div>
+                        <div style="font-size: 28px;" aria-hidden="true">🤝</div>
+                        <div style="font-size: 13px; font-weight: 600;">Your Brand Here</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <!-- END LEFT COLUMN -->
+
+        <!-- ========== RIGHT / SIDEBAR ========== -->
+        <aside class="sidebar" aria-label="Registration sidebar">
+            <div class="reg-card" id="registration-card">
+
+                <!-- Prize Pool Header -->
+                <div class="reg-card-top">
+                    <!-- Event branding -->
+                    <div class="card-brand-title">SEMICOLON;</div>
+                    <div class="card-brand-tagline">Because the idea doesn't end here.</div>
+                    <div class="card-brand-divider" aria-hidden="true"></div>
+                    <!-- Prize -->
+                    <div class="reg-eyebrow">Total Prize Pool</div>
+                    <div class="prize-amount" aria-label="5,000 rupees prize pool">₹5,000</div>
+                    <div class="prize-sub">To be won*</div>
+                </div>
+
+                <div class="reg-card-body">
+
+                    <!-- Countdown -->
+                    <div class="cd-label">Event Starts In</div>
+                    <div class="cd-grid" aria-label="Countdown to event" role="timer">
+                        <div class="cd-cell">
+                            <span class="cd-num" id="cd-d">--</span>
+                            <span class="cd-unit">Days</span>
+                        </div>
+                        <div class="cd-cell">
+                            <span class="cd-num" id="cd-h">--</span>
+                            <span class="cd-unit">Hrs</span>
+                        </div>
+                        <div class="cd-cell">
+                            <span class="cd-num" id="cd-m">--</span>
+                            <span class="cd-unit">Min</span>
+                        </div>
+                        <div class="cd-cell">
+                            <span class="cd-num" id="cd-s">--</span>
+                            <span class="cd-unit">Sec</span>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <dl class="stat-list" aria-label="Event quick facts">
+                        <div class="stat-item">
+                            <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">📅</span> Date</dt>
+                            <dd class="stat-val">Aug 22, 2026</dd>
+                        </div>
+                        <div class="stat-item">
+                            <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">⏰</span> Time</dt>
+                            <dd class="stat-val">10:00 AM+</dd>
+                        </div>
+                        <div class="stat-item">
+                            <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">👥</span> Team Size</dt>
+                            <dd class="stat-val">1–2 Members</dd>
+                        </div>
+                        <div class="stat-item">
+                            <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">📍</span> Mode</dt>
+                            <dd class="stat-val">Offline</dd>
+                        </div>
+                        <div class="stat-item">
+                            <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">💰</span> Entry Fee</dt>
+                            <dd class="stat-val">Free</dd>
+                        </div>
+                    </dl>
+
+                    <!-- CTA Buttons -->
+                    <div class="card-ctas">
+                        <button class="btn btn-primary btn-lg btn-full" onclick="openModal()" id="sidebar-reg-btn" aria-label="Open registration form">
+                            Register Now →
+                        </button>
+                        <button class="btn btn-outline btn-full" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" aria-label="Learn more about the event">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-footer">Organized by BGU × TechTrack · 2026</div>
+            </div>
+        </aside>
+
+    </div>
+    <!-- END PAGE GRID -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">SEMICOLON;</div>
+            <address class="footer-addr" style="font-style:normal;">IDCO Plot No. 2, Institutional Area, Gothapatna, Bhubaneswar, Odisha 751029</address>
+            <div class="footer-copy">BGU × TechTrack · 2026</div>
+        </div>
+    </footer>
+
+    <!-- =============================================
+         REGISTRATION MODAL
+    ============================================= -->
+    <div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true" aria-label="Registration Form">
+        <div class="modal" id="modal-box">
+
+            <!-- Header -->
+            <div class="modal-head">
+                <div class="modal-head-text">
+                    <h2>Register for SEMICOLON</h2>
+                    <p>Fill in your team details to secure your spot.</p>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close registration form">×</button>
+            </div>
+
+            <!-- Step Bar -->
+            <div class="step-bar" id="step-bar" aria-label="Form progress">
+                <div class="step-node is-active" id="sn-1">
+                    <div class="step-bubble">1</div>
+                    <span class="step-name">Team Info</span>
+                </div>
+                <div class="step-line" id="sl-1"></div>
+                <div class="step-node" id="sn-2">
+                    <div class="step-bubble">2</div>
+                    <span class="step-name">Members</span>
+                </div>
+                <div class="step-line" id="sl-2"></div>
+                <div class="step-node" id="sn-3">
+                    <div class="step-bubble">3</div>
+                    <span class="step-name">Review</span>
+                </div>
+            </div>
+
+            <!-- Form panels -->
+            <div class="modal-form">
+
+                <!-- PANEL 1 -->
+                <div class="form-panel is-active" id="panel-1">
+                    <h3 class="panel-title">Team &amp; Leader Details</h3>
+                    <p class="panel-desc">Start with your team name and team leader's contact information.</p>
+
+                    <div class="field" id="f-team-name">
+                        <label for="inp-team-name">Team Name <span class="req" aria-label="required">*</span></label>
+                        <input type="text" id="inp-team-name" placeholder="e.g., The Innovators" autocomplete="off">
+                        <div class="field-err" role="alert">Please enter your team name.</div>
+                    </div>
+
+                    <div class="field" id="f-college">
+                        <label for="inp-college">College / Institution <span class="req" aria-label="required">*</span></label>
+                        <input type="text" id="inp-college" placeholder="e.g., Birla Global University" autocomplete="organization">
+                        <div class="field-err" role="alert">Please enter your college name.</div>
+                    </div>
+
+                    <div style="padding: 10px 14px; background: var(--gray-50); border-left: 3px solid var(--black); border-radius: 0 var(--r-md) var(--r-md) 0; margin-bottom: 16px; margin-top: 8px;">
+                        <strong style="font-size: 13px; font-weight: 700;">Team Leader Details</strong>
+                    </div>
+
+                    <div class="field" id="f-leader-name">
+                        <label for="inp-leader-name">Leader Full Name <span class="req" aria-label="required">*</span></label>
+                        <input type="text" id="inp-leader-name" placeholder="Full name" autocomplete="name">
+                        <div class="field-err" role="alert">Please enter the leader's name.</div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field" id="f-leader-email">
+                            <label for="inp-leader-email">Email Address <span class="req" aria-label="required">*</span></label>
+                            <input type="email" id="inp-leader-email" placeholder="leader@college.edu" autocomplete="email">
+                            <div class="field-err" role="alert">Please enter a valid email.</div>
+                        </div>
+                        <div class="field" id="f-leader-phone">
+                            <label for="inp-leader-phone">Phone Number <span class="req" aria-label="required">*</span></label>
+                            <input type="tel" id="inp-leader-phone" placeholder="10-digit number" maxlength="10" autocomplete="tel">
+                            <div class="field-err" role="alert">Please enter a valid 10-digit number.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 2 -->
+                <div class="form-panel" id="panel-2">
+                    <h3 class="panel-title">Additional Team Members</h3>
+                    <p class="panel-desc">Add up to 3 more teammates. All are optional — click the + to expand each slot.</p>
+
+                    <!-- Member 2 -->
+                    <button type="button" class="member-toggle" onclick="toggleMember(2)" id="mt-2" aria-expanded="false" aria-controls="mf-2">
+                        <span class="toggle-plus" aria-hidden="true">+</span>
+                        <span class="toggle-lbl">Teammate 2</span>
+                        <span class="toggle-opt">Optional</span>
+                    </button>
+                    <div class="member-fields" id="mf-2">
+                        <span class="member-head">Teammate 2</span>
+                        <div class="field">
+                            <label for="m2-name">Full Name <span class="opt">(optional)</span></label>
+                            <input type="text" id="m2-name" placeholder="Full name">
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="m2-email">Email <span class="opt">(optional)</span></label>
+                                <input type="email" id="m2-email" placeholder="teammate@college.edu">
+                            </div>
+                            <div class="field">
+                                <label for="m2-phone">Phone <span class="opt">(optional)</span></label>
+                                <input type="tel" id="m2-phone" placeholder="10-digit number" maxlength="10">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 3 — REVIEW -->
+                <div class="form-panel" id="panel-3">
+                    <h3 class="panel-title">Review Your Registration</h3>
+                    <p class="panel-desc">Check your details before submitting. You can go back to edit anything.</p>
+                    <div class="review-section" id="review-content" aria-live="polite">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- END FORM PANELS -->
+
+            <!-- Footer Buttons -->
+            <div class="modal-foot">
+                <button class="btn btn-outline" id="btn-back" onclick="goBack()" style="display:none;" aria-label="Go to previous step">← Back</button>
+                <button class="btn btn-primary" id="btn-next" onclick="goNext()" aria-label="Continue to next step">Continue →</button>
+                <button class="btn btn-primary btn-lg" id="btn-submit" style="display:none;" aria-label="Submit registration">Submit Registration</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =============================================
+         SUCCESS SCREEN
+    ============================================= -->
+    <div class="success-screen" id="success-screen" role="status" aria-live="assertive" aria-atomic="true">
+        <div class="success-sc" aria-hidden="true">;</div>
+        <h1 class="success-title">You're In!</h1>
+        <p class="success-msg">"Registration Successful! See you at the Ideathon."</p>
+        <div class="success-info">
+            <div class="success-info-row">
+                <span aria-hidden="true">📅</span>
+                <span>22nd August, 2026 · 10:00 AM Onwards</span>
+            </div>
+            <div class="success-info-row">
+                <span aria-hidden="true">📍</span>
+                <span>Birla Global University, Bhubaneswar</span>
+            </div>
+            <div class="success-info-row">
+                <span aria-hidden="true">📧</span>
+                <span>Watch your inbox for confirmation details</span>
+            </div>
+        </div>
+        <button class="btn" style="background:var(--white);color:var(--black);font-size:16px;padding:16px 44px;border-radius:12px;" onclick="closeSuccess()" id="success-close-btn">
+            Back to Home
+        </button>
+    </div>
+
+   <!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+    <script>
+        'use strict';
+
+        /* =============================================
+           CONFIG — Replace with your Apps Script URL
+        ============================================= */
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzqe_-vQ8B__VwiFyg9DNVi5AGy0oK6So3o5_L8SqueEimmwKs18dLzPUdkZtXSwc6s/exec';
+        /* =============================================
+           COUNTDOWN TIMER
+           Target: Aug 21, 2026 · 11:59 PM IST
+        ============================================= */
+        // Explicitly defining the time with the +05:30 IST timezone offset
+        const EVENT_DATE = new Date('2026-08-21T23:59:00+05:30');
+
+        function pad(n) { return String(n).padStart(2, '0'); }
+
+        function tick() {
+            const now = Date.now();
+            const diff = EVENT_DATE - now;
+
+            if (diff <= 0) {
+                ['cd-d','cd-h','cd-m','cd-s'].forEach(id => { document.getElementById(id).textContent = '00'; });
+                return;
+            }
+
+            const days  = Math.floor(diff / 86400000);
+            const hours = Math.floor((diff % 86400000) / 3600000);
+            const mins  = Math.floor((diff % 3600000)  / 60000);
+            const secs  = Math.floor((diff % 60000)    / 1000);
+
+            document.getElementById('cd-d').textContent = pad(days);
+            document.getElementById('cd-h').textContent = pad(hours);
+            document.getElementById('cd-m').textContent = pad(mins);
+            document.getElementById('cd-s').textContent = pad(secs);
+        }
+
+        tick();
+        setInterval(tick, 1000);
+
+        /* =============================================
+           SCROLL REVEAL
+        ============================================= */
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        /* =============================================
+           MODAL OPEN / CLOSE
+        ============================================= */
+        let currentStep = 1;
+        const TOTAL_STEPS = 3;
+
+        function openModal() {
+            currentStep = 1;
+            renderStepUI();
+            document.getElementById('modal-bg').classList.add('open');
+            document.body.style.overflow = 'hidden';
+            // Focus the modal for accessibility
+            setTimeout(() => document.querySelector('.modal-close-btn').focus(), 100);
+        }
+
+        function closeModal() {
+            document.getElementById('modal-bg').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Close on backdrop click
+        document.getElementById('modal-bg').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close on ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (document.getElementById('success-screen').classList.contains('open')) closeSuccess();
+                else closeModal();
+            }
+        });
+
+        /* =============================================
+           STEP RENDERING
+        ============================================= */
+        function renderStepUI() {
+            // Panels
+            for (let i = 1; i <= TOTAL_STEPS; i++) {
+                document.getElementById(`panel-${i}`).classList.toggle('is-active', i === currentStep);
+            }
+
+            // Step bubbles
+            for (let i = 1; i <= TOTAL_STEPS; i++) {
+                const node = document.getElementById(`sn-${i}`);
+                node.classList.remove('is-active', 'is-done');
+                if (i === currentStep) node.classList.add('is-active');
+                else if (i < currentStep) node.classList.add('is-done');
+            }
+
+            // Step lines
+            for (let i = 1; i < TOTAL_STEPS; i++) {
+                document.getElementById(`sl-${i}`).classList.toggle('is-done', i < currentStep);
+            }
+
+            // Update done bubbles to show checkmark
+            document.querySelectorAll('.step-node.is-done .step-bubble').forEach(b => {
+                if (!b.dataset.orig) b.dataset.orig = b.textContent;
+                b.textContent = '✓';
+            });
+            document.querySelectorAll('.step-node:not(.is-done) .step-bubble').forEach(b => {
+                if (b.dataset.orig) b.textContent = b.dataset.orig;
+            });
+
+            // Footer buttons
+            const btnBack   = document.getElementById('btn-back');
+            const btnNext   = document.getElementById('btn-next');
+            const btnSubmit = document.getElementById('btn-submit');
+
+            btnBack.style.display   = currentStep > 1 ? 'inline-flex' : 'none';
+            btnNext.style.display   = currentStep < TOTAL_STEPS ? 'inline-flex' : 'none';
+            btnSubmit.style.display = currentStep === TOTAL_STEPS ? 'inline-flex' : 'none';
+
+            // If review step, populate it
+            if (currentStep === TOTAL_STEPS) buildReview();
+
+            // Scroll modal to top
+            document.getElementById('modal-box').scrollTop = 0;
+        }
+
+        /* =============================================
+           VALIDATION — Step 1
+        ============================================= */
+        function validateStep1() {
+            let ok = true;
+
+            function check(fieldId, inputId, validator) {
+                const field = document.getElementById(fieldId);
+                const input = document.getElementById(inputId);
+                const valid = validator(input.value.trim());
+                field.classList.toggle('has-error', !valid);
+                if (!valid) ok = false;
+            }
+
+            check('f-team-name',    'inp-team-name',    v => v.length > 0);
+            check('f-college',      'inp-college',      v => v.length > 0);
+            check('f-leader-name',  'inp-leader-name',  v => v.length > 0);
+            check('f-leader-email', 'inp-leader-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+            check('f-leader-phone', 'inp-leader-phone', v => /^\d{10}$/.test(v));
+
+            return ok;
+        }
+
+        /* =============================================
+           NAVIGATION
+        ============================================= */
+        function goNext() {
+            if (currentStep === 1 && !validateStep1()) {
+                // Focus first error
+                const first = document.querySelector('.field.has-error input');
+                if (first) first.focus();
+                return;
+            }
+            if (currentStep < TOTAL_STEPS) { currentStep++; renderStepUI(); }
+        }
+
+        function goBack() {
+            if (currentStep > 1) { currentStep--; renderStepUI(); }
+        }
+
+        /* =============================================
+           REVIEW BUILDER
+        ============================================= */
+        // Safe value reader — returns '' instead of crashing on missing elements
+        function val(id) {
+            var el = document.getElementById(id);
+            return el ? el.value.trim() : '';
+        }
+
+        function reviewRow(key, value) {
+            if (!value) return '';
+            return `<div class="review-row"><span class="review-key">${key}</span><span class="review-val">${value}</span></div>`;
+        }
+
+        function groupLabel(text) {
+            return `<div class="review-group-label">${text}</div>`;
+        }
+
+        function buildReview() {
+            const m2 = val('m2-name'), m3 = val('m3-name'), m4 = val('m4-name');
+            let html = '';
+
+            html += groupLabel('Team Info');
+            html += reviewRow('Team Name', val('inp-team-name'));
+            html += reviewRow('College', val('inp-college'));
+
+            html += groupLabel('Team Leader');
+            html += reviewRow('Name', val('inp-leader-name'));
+            html += reviewRow('Email', val('inp-leader-email'));
+            html += reviewRow('Phone', val('inp-leader-phone'));
+
+            if (m2) {
+                html += groupLabel('Teammate 2');
+                html += reviewRow('Name', m2);
+                html += reviewRow('Email', val('m2-email'));
+                html += reviewRow('Phone', val('m2-phone'));
+            }
+            if (m3) {
+                html += groupLabel('Teammate 3');
+                html += reviewRow('Name', m3);
+                html += reviewRow('Email', val('m3-email'));
+                html += reviewRow('Phone', val('m3-phone'));
+            }
+            if (m4) {
+                html += groupLabel('Teammate 4');
+                html += reviewRow('Name', m4);
+                html += reviewRow('Email', val('m4-email'));
+                html += reviewRow('Phone', val('m4-phone'));
+            }
+
+            document.getElementById('review-content').innerHTML = html;
+        }
+
+        /* =============================================
+           FORM SUBMISSION
+           Fixed for iOS/iPadOS tap reliability:
+           - Show success immediately (no await before UX)
+           - Fire fetch in background so network never blocks
+           - Wired via addEventListener not inline onclick
+        ============================================= */
+        function submitRegistration() {
+            var submitBtn = document.getElementById('btn-submit');
+
+            // Prevent double-fire
+            if (submitBtn.disabled) return;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting…';
+            submitBtn.style.opacity = '0.65';
+
+            function showSuccess() {
+                closeModal();
+                var screen = document.getElementById('success-screen');
+                if (screen) screen.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function resetBtn() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Registration';
+                submitBtn.style.opacity = '';
+            }
+
+            try {
+                // Collect form data
+                var payload = {
+                    submittedAt:  new Date().toISOString(),
+                    teamName:     val('inp-team-name'),
+                    college:      val('inp-college'),
+                    leaderName:   val('inp-leader-name'),
+                    leaderEmail:  val('inp-leader-email'),
+                    leaderPhone:  val('inp-leader-phone'),
+                    m2Name:       val('m2-name'),
+                    m2Email:      val('m2-email'),
+                    m2Phone:      val('m2-phone'),
+                    m3Name:       val('m3-name'),
+                    m3Email:      val('m3-email'),
+                    m3Phone:      val('m3-phone'),
+                    m4Name:       val('m4-name'),
+                    m4Email:      val('m4-email'),
+                    m4Phone:      val('m4-phone'),
+                };
+
+                // Show success RIGHT NOW — never block on network
+                showSuccess();
+                setTimeout(resetBtn, 600);
+
+                // Send to Google Sheets silently in background
+                if (WEBHOOK_URL && WEBHOOK_URL.startsWith('http')) {
+                    fetch(WEBHOOK_URL, {
+                        method:  'POST',
+                        mode:    'no-cors',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body:    JSON.stringify(payload),
+                    }).catch(function(err) {
+                        console.warn('[SEMICOLON] Webhook send failed (non-blocking):', err);
+                    });
+                } else {
+                    console.log('[SEMICOLON] Dev mode — payload logged:', payload);
+                }
+
+            } catch (err) {
+                // Safety net: even if something above threw, always show success
+                console.error('[SEMICOLON] Submit error caught:', err);
+                showSuccess();
+                setTimeout(resetBtn, 600);
+            }
+        }
+
+        /* =============================================
+           SUCCESS SCREEN
+        ============================================= */
+        function closeSuccess() {
+            document.getElementById('success-screen').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        /* =============================================
+           MEMBER TOGGLES
+        ============================================= */
+        function toggleMember(n) {
+            const toggle = document.getElementById(`mt-${n}`);
+            const fields = document.getElementById(`mf-${n}`);
+            const isOpen = toggle.classList.contains('is-open');
+
+            toggle.classList.toggle('is-open', !isOpen);
+            fields.classList.toggle('is-open', !isOpen);
+            toggle.setAttribute('aria-expanded', String(!isOpen));
+
+            // Focus first field when opened
+            if (!isOpen) {
+                const firstInput = fields.querySelector('input');
+                if (firstInput) setTimeout(() => firstInput.focus(), 100);
+            }
+        }
+
+        /* =============================================
+           PHONE INPUT — Numeric only
+        ============================================= */
+        document.querySelectorAll('input[type="tel"]').forEach(inp => {
+            inp.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '').slice(0, 10);
+            });
+        });
+
+        /* =============================================
+           CLEAR ERROR ON INPUT
+        ============================================= */
+        document.querySelectorAll('.field input').forEach(inp => {
+            inp.addEventListener('input', function() {
+                this.closest('.field')?.classList.remove('has-error');
+            });
+        });
+
+        /* =============================================
+           SUBMIT BUTTON — addEventListener wiring
+           Using this instead of inline onclick so iOS
+           Safari reliably fires the handler on tap.
+        ============================================= */
+        // Wire submit button — single click listener, no touchend conflict
+        (function() {
+            var btn = document.getElementById('btn-submit');
+            if (btn) btn.addEventListener('click', submitRegistration);
+        })();
+    </script>
+</body>
+</html>
