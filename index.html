@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEMICOLON — Inter-College Ideathon 2026 | BGU × TechTrack</title>
-    <meta name="description" content="SEMICOLON — Because the idea doesn't end here. An Inter-College Ideathon on Campus &amp; EdTech Solutions at Birla Global University, Bhubaneswar. August 22, 2026. Prize Pool ₹10,000.">
-    <meta name="keywords" content="SEMICOLON, ideathon, Birla Global University, BGU, TechTrack, inter-college, campus solutions, edtech, Bhubaneswar, Odisha">
-    <meta property="og:title" content="SEMICOLON — Inter-College Ideathon 2026">
+    <title>SEMICOLON —  Inter-School Ideathon 2026 | BGU   TechTrack</title>
+    <meta name="description" content="SEMICOLON — Because the idea doesn't end here. An  Inter-School Ideathon on Campus &amp; EdTech Solutions at Birla Global University, Bhubaneswar. August 22, 2026. Prize Pool ₹10,000.">
+    <meta name="keywords" content="SEMICOLON, ideathon, Birla Global University, BGU, TechTrack,  Inter-School, campus solutions, edtech, Bhubaneswar, Odisha">
+    <meta property="og:title" content="SEMICOLON —  Inter-School Ideathon 2026">
     <meta property="og:description" content="Because the idea doesn't end here. Campus &amp; EdTech Solutions. Prize Pool ₹10,000. Aug 22, 2026.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,6 +159,7 @@
             height: 36px;
             object-fit: contain;
             flex-shrink: 0;
+            filter: brightness(0);
         }
 
         .h-logo-x {
@@ -173,7 +174,7 @@
             gap: 6px;
         }
 
-        .h-tt-img { width: 28px; height: 28px; object-fit: contain; }
+        .h-tt-img { width: 28px; height: 28px; object-fit: contain; filter: brightness(0); }
         .h-logo-tt span {
             font-family: var(--font-display);
             font-size: 13px;
@@ -562,7 +563,7 @@
         .org-row {
             display: flex;
             align-items: center;
-            gap: 16px;
+            justify-content: space-between;
             margin-bottom: 36px;
         }
 
@@ -577,6 +578,7 @@
             height: 56px;
             object-fit: contain;
             flex-shrink: 0;
+            filter: brightness(0);
         }
 
         .bgu-text { display: flex; flex-direction: column; }
@@ -596,6 +598,7 @@
             height: 52px; 
             object-fit: contain;
             flex-shrink: 0;
+            filter: brightness(0);
         }
         .tt-text { display: flex; flex-direction: column; }
         .tt-name { font-family: var(--font-display); font-size: 16px; font-weight: 800; line-height: 1.1; }
@@ -604,18 +607,13 @@
         /* Hero title */
         .hero-title {
             font-family: var(--font-display);
-            font-size: clamp(80px, 11.5vw, 148px);
+            font-size: clamp(60px, 9vw, 120px);
             font-weight: 800;
             letter-spacing: -0.04em;
             line-height: 0.88;
             margin-bottom: 20px;
-        }
-
-        .hero-sc {
-            display: inline-block;
-            font-size: 0.85em;
-            vertical-align: middle;
-            line-height: 1;
+            word-wrap: break-word; /* Prevent overlap */
+            overflow-wrap: break-word;
         }
 
         .hero-tagline {
@@ -881,6 +879,7 @@
         .tl-item.is-done .tl-dot {
             background: var(--black);
             border-color: var(--black);
+            color: var(--white);
         }
 
         .tl-item.is-next .tl-dot {
@@ -1215,6 +1214,50 @@
         .field-err { font-size: 12px; color: var(--red); margin-top: 4px; display: none; }
         .field.has-error .field-err { display: block; }
 
+        /* Track picker grid — Step 3 */
+        .track-pick-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .track-pick-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--r-lg);
+            cursor: pointer;
+            transition: all var(--t-base);
+            user-select: none;
+            background: var(--white);
+        }
+
+        .track-pick-card:hover {
+            border-color: var(--gray-400);
+            background: var(--gray-50);
+        }
+
+        .track-pick-card:has(input:checked) {
+            background: var(--black);
+            border-color: var(--black);
+            color: var(--white);
+        }
+
+        .tp-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .tp-name {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
         /* Member toggle */
         .member-toggle {
             display: flex;
@@ -1464,14 +1507,14 @@
             <span class="ticker-item"><span class="ticker-dot"></span> SEMICOLON Ideathon · August 22, 2026</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Prize Pool: ₹10,000</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Campus & EdTech Solutions</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> BGU × TechTrack</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> BGU   TechTrack</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Offline · Bhubaneswar, Odisha</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Team Size: 1–2 Members</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Free Registration</span>
             <span class="ticker-item"><span class="ticker-dot"></span> SEMICOLON Ideathon · August 22, 2026</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Prize Pool: ₹10,000</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Campus & EdTech Solutions</span>
-            <span class="ticker-item"><span class="ticker-dot"></span> BGU × TechTrack</span>
+            <span class="ticker-item"><span class="ticker-dot"></span> BGU   TechTrack</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Offline · Bhubaneswar, Odisha</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Team Size: 1–2 Members</span>
             <span class="ticker-item"><span class="ticker-dot"></span> Free Registration</span>
@@ -1484,14 +1527,13 @@
             <div class="header-left">
                 <div class="header-logo-group">
                     <img src="images/bgu-logo.png" alt="BGU Logo" class="h-bgu-img">
-                    <span class="h-logo-x" aria-hidden="true">×</span>
+                    <span class="h-logo-x" aria-hidden="true"> </span>
                     <div class="h-logo-tt">
                         <img src="images/techtrack.png" alt="TechTrack Logo" class="h-tt-img">
-                        <span>TechTrack</span>
                     </div>
                 </div>
                 <div class="header-divider" aria-hidden="true"></div>
-                <span class="header-event-name">SEMICOLON;</span>
+                <span class="header-event-name">SEMICOLON</span>
             </div>
 
             <nav class="header-nav" aria-label="Page navigation">
@@ -1524,7 +1566,7 @@
                         </div>
                     </div>
 
-                    <span class="org-x" aria-hidden="true">×</span>
+                    <span class="org-x" aria-hidden="true"> </span>
 
                     <div class="org-logo-tt" aria-label="TechTrack — BGU Tech Club">
                         <img src="images/techtrack.png" alt="TechTrack Logo" class="tt-logo-img">
@@ -1537,8 +1579,8 @@
 
                 <!-- Title -->
                 <div class="reveal reveal-delay-1">
-                    <h1 class="hero-title">SEMI<span class="hero-sc" aria-hidden="true">;</span>COLON</h1>
-                    <p class="hero-tagline">Because the idea doesn't end here.</p>
+                    <h1 class="hero-title">SEMICOLON</h1>
+                    <p class="hero-tagline">Because the idea doesn't end here;</p>
                 </div>
 
                 <!-- Tags -->
@@ -1546,7 +1588,7 @@
                     <span class="tag tag-solid" role="listitem">🏆 Ideathon</span>
                     <span class="tag tag-outline" role="listitem">🎓 Campus Solutions</span>
                     <span class="tag tag-outline" role="listitem">💡 EdTech</span>
-                    <span class="tag tag-ghost" role="listitem">Inter-College</span>
+                    <span class="tag tag-ghost" role="listitem"> Inter-School</span>
                     <span class="tag tag-ghost" role="listitem">Offline Event</span>
                 </div>
 
@@ -1568,7 +1610,7 @@
                     <span class="s-label">About the Event</span>
                 </div>
                 <h2 class="s-title" id="about-title">What is SEMICOLON?</h2>
-                <p class="s-desc">SEMICOLON is an inter-college ideathon hosted by Birla Global University in collaboration with TechTrack — the BGU Tech Club. It's a space where student innovators come together to ideate, design, and pitch solutions to real campus and education technology challenges.</p>
+                <p class="s-desc">SEMICOLON is an  Inter-School Ideathon hosted by TechTrack under Birla Global University — the BGU Tech Club. It's a space where student innovators come together to ideate, design, and pitch solutions to real campus and education technology challenges.</p>
 
                 <div class="theme-block">
                     <div class="theme-eyebrow">This Year's Theme</div>
@@ -1632,10 +1674,17 @@
                     </div>
 
                     <div class="track-card" role="listitem">
+                        <span class="track-icon" aria-hidden="true">💹</span>
+                        <h4>Commerce</h4>
+                        <p>Retail innovation, e-commerce, accounting tech, trade solutions, or ideas that modernise how business and commerce operate.</p>
+                        <span class="track-num">TRACK 06</span>
+                    </div>
+
+                    <div class="track-card" role="listitem">
                         <span class="track-icon" aria-hidden="true">💡</span>
                         <h4>Open Idea</h4>
                         <p>No constraints. If your idea doesn't fit the other tracks but has impact and innovation, this is your stage. Surprise us.</p>
-                        <span class="track-num">TRACK 06</span>
+                        <span class="track-num">TRACK 07</span>
                     </div>
 
                 </div>
@@ -1652,7 +1701,7 @@
                 <div class="elig-grid">
                     <div class="elig-card" role="article">
                         <span class="elig-icon" aria-hidden="true">🎓</span>
-                        <h3>Inter-College Students</h3>
+                        <h3> Inter-School Students</h3>
                         <p>Open to any undergraduate or postgraduate college student. Cross-college teams are encouraged — bring together your best minds.</p>
                     </div>
                     <div class="elig-card" role="article">
@@ -1703,7 +1752,7 @@
                     <div class="tl-item" role="listitem">
                         <div class="tl-dot" aria-hidden="true">🏆</div>
                         <div class="tl-body">
-                            <div class="tl-date">August 22, 2026 · 10:00 AM Onwards</div>
+                            <div class="tl-date">August 22, 2026 · 11:30 AM Onwards</div>
                             <div class="tl-event">SEMICOLON — Main Event Day</div>
                             <p class="tl-desc">Present your idea to a panel of judges, connect with fellow innovators, and compete for the ₹10,000 prize pool.</p>
                             <span class="tl-badge">🎯 Main Event</span>
@@ -1722,7 +1771,7 @@
                 <div class="venue-card" role="article" aria-label="Event venue details">
                     <div class="venue-icon" aria-hidden="true">📍</div>
                     <div class="venue-info">
-                        <h3>Birla Global University Campus</h3>
+                        <h3>CR-4 Law Extension, Birla Global University Campus</h3>
                         <p>IDCO Plot No. 2, Institutional Area,<br>Gothapatna, Bhubaneswar,<br>Odisha — 751029</p>
                         <a href="https://maps.google.com/?q=Birla+Global+University+IDCO+Plot+2+Gothapatna+Bhubaneswar+Odisha+751029" target="_blank" rel="noopener noreferrer" class="venue-link" aria-label="Open venue in Google Maps">
                             <span aria-hidden="true">🗺️</span> View on Google Maps
@@ -1739,25 +1788,40 @@
                 <h2 class="s-title" id="sponsors-title">Our Partners</h2>
 
                 <div class="sponsor-row" role="list" aria-label="Event sponsors">
-                    <!-- Red Bull -->
-                    <div class="sponsor-card" role="listitem" aria-label="Red Bull — Energy Drinks Partner">
-                        <div class="sponsor-type">Energy Drinks Partner</div>
-                        <svg width="130" height="56" viewBox="0 0 130 56" xmlns="http://www.w3.org/2000/svg" aria-label="Red Bull logo" role="img">
-                            <!-- Simplified Red Bull mark -->
-                            <ellipse cx="45" cy="26" rx="18" ry="16" fill="#CC0000"/>
-                            <ellipse cx="62" cy="26" rx="16" ry="14" fill="#CC0000" opacity="0.8"/>
-                            <circle cx="53" cy="42" r="9" fill="#FFD700"/>
-                            <!-- Text -->
-                            <text x="65" y="25" text-anchor="start" fill="#CC0000" font-size="18" font-weight="900" font-family="Arial Black, Arial, sans-serif" letter-spacing="-0.5">Red</text>
-                            <text x="65" y="44" text-anchor="start" fill="#CC0000" font-size="18" font-weight="900" font-family="Arial Black, Arial, sans-serif" letter-spacing="-0.5">Bull</text>
-                        </svg>
-                    </div>
-
                     <!-- Placeholder for more sponsors -->
                     <div class="sponsor-card" style="border-style: dashed; color: var(--gray-400);" role="listitem">
                         <div class="sponsor-type">Become a Partner</div>
                         <div style="font-size: 28px;" aria-hidden="true">🤝</div>
                         <div style="font-size: 13px; font-weight: 600;">Your Brand Here</div>
+                    </div>
+                </div>
+            </section>
+            <!-- CONTACT -->
+            <section class="section reveal" id="contact" aria-labelledby="contact-title">
+                <div class="s-eyebrow">
+                    <span class="s-label">Get in Touch</span>
+                </div>
+                <h2 class="s-title" id="contact-title">Contact</h2>
+
+                <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 32px;">
+                    <div>
+                        <h3 style="font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                            <span aria-hidden="true" style="font-size: 20px;"></span> E-MAILS:
+                        </h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; color: var(--gray-500); font-size: 15px; padding-left: 28px;">
+                            <li>pratysuh.behera28@bgu.ac.in</li>
+                            <li>techtrack@bgu.ac.in</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 style="font-family: var(--font-display); font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+                            <span aria-hidden="true" style="font-size: 20px;"></span> CONTACTS:
+                        </h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; color: var(--gray-500); font-size: 15px; padding-left: 28px;">
+                            <li>PRATUSH RANJAN BEHERA: +91 98617 40660</li>
+                            <li>ASHUTOSH PRUSTY: +91 78478 55933</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -1772,8 +1836,8 @@
                 <!-- Prize Pool Header -->
                 <div class="reg-card-top">
                     <!-- Event branding -->
-                    <div class="card-brand-title">SEMICOLON;</div>
-                    <div class="card-brand-tagline">Because the idea doesn't end here.</div>
+                    <div class="card-brand-title">SEMICOLON</div>
+                    <div class="card-brand-tagline">Because the idea doesn't end here;</div>
                     <div class="card-brand-divider" aria-hidden="true"></div>
                     <!-- Prize -->
                     <div class="reg-eyebrow">Total Prize Pool</div>
@@ -1812,7 +1876,7 @@
                         </div>
                         <div class="stat-item">
                             <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">⏰</span> Time</dt>
-                            <dd class="stat-val">10:00 AM+</dd>
+                            <dd class="stat-val">11:30 AM+</dd>
                         </div>
                         <div class="stat-item">
                             <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">👥</span> Team Size</dt>
@@ -1820,7 +1884,7 @@
                         </div>
                         <div class="stat-item">
                             <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">📍</span> Mode</dt>
-                            <dd class="stat-val">Offline</dd>
+                            <dd class="stat-val">Offline (CR-4 Law Extension)</dd>
                         </div>
                         <div class="stat-item">
                             <dt class="stat-lhs"><span class="stat-icon" aria-hidden="true">💰</span> Entry Fee</dt>
@@ -1839,7 +1903,7 @@
                     </div>
                 </div>
 
-                <div class="card-footer">Organized by BGU × TechTrack · 2026</div>
+                <div class="card-footer">Organized by BGU   TechTrack · 2026</div>
             </div>
         </aside>
 
@@ -1849,9 +1913,9 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
-            <div class="footer-brand">SEMICOLON;</div>
+            <div class="footer-brand">SEMICOLON</div>
             <address class="footer-addr" style="font-style:normal;">IDCO Plot No. 2, Institutional Area, Gothapatna, Bhubaneswar, Odisha 751029</address>
-            <div class="footer-copy">BGU × TechTrack · 2026</div>
+            <div class="footer-copy">BGU   TechTrack · 2026</div>
         </div>
     </footer>
 
@@ -1867,7 +1931,7 @@
                     <h2>Register for SEMICOLON</h2>
                     <p>Fill in your team details to secure your spot.</p>
                 </div>
-                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close registration form">×</button>
+                <button class="modal-close-btn" onclick="closeModal()" aria-label="Close registration form"> </button>
             </div>
 
             <!-- Step Bar -->
@@ -1884,6 +1948,11 @@
                 <div class="step-line" id="sl-2"></div>
                 <div class="step-node" id="sn-3">
                     <div class="step-bubble">3</div>
+                    <span class="step-name">Track</span>
+                </div>
+                <div class="step-line" id="sl-3"></div>
+                <div class="step-node" id="sn-4">
+                    <div class="step-bubble">4</div>
                     <span class="step-name">Review</span>
                 </div>
             </div>
@@ -1903,9 +1972,9 @@
                     </div>
 
                     <div class="field" id="f-college">
-                        <label for="inp-college">College / Institution <span class="req" aria-label="required">*</span></label>
-                        <input type="text" id="inp-college" placeholder="e.g., Birla Global University" autocomplete="organization">
-                        <div class="field-err" role="alert">Please enter your college name.</div>
+                        <label for="inp-college">School Name <span class="req" aria-label="required">*</span></label>
+                        <input type="text" id="inp-college" placeholder="e.g., Engineering & Technology, Applied Science" autocomplete="organization">
+                        <div class="field-err" role="alert">Please enter your School name.</div>
                     </div>
 
                     <div style="padding: 10px 14px; background: var(--gray-50); border-left: 3px solid var(--black); border-radius: 0 var(--r-md) var(--r-md) 0; margin-bottom: 16px; margin-top: 8px;">
@@ -1935,7 +2004,7 @@
                 <!-- PANEL 2 -->
                 <div class="form-panel" id="panel-2">
                     <h3 class="panel-title">Additional Team Members</h3>
-                    <p class="panel-desc">Add up to 3 more teammates. All are optional — click the + to expand each slot.</p>
+                    <p class="panel-desc">Add up to 1 more teammates. All are optional — click the + to expand each slot.</p>
 
                     <!-- Member 2 -->
                     <button type="button" class="member-toggle" onclick="toggleMember(2)" id="mt-2" aria-expanded="false" aria-controls="mf-2">
@@ -1962,8 +2031,61 @@
                     </div>
                 </div>
 
-                <!-- PANEL 3 — REVIEW -->
+                <!-- PANEL 3 — PROBLEM STATEMENT / TRACK PICK -->
                 <div class="form-panel" id="panel-3">
+                    <h3 class="panel-title">Choose Your Track</h3>
+                    <p class="panel-desc">Select the problem domain your idea addresses. You can only pick one.</p>
+
+                    <div class="track-pick-grid" id="track-pick-grid" role="radiogroup" aria-label="Select a problem statement track">
+
+                        <label class="track-pick-card" id="tp-emerging">
+                            <input type="radio" name="track" value="Emerging Technology" hidden>
+                            <span class="tp-icon">🚀</span>
+                            <span class="tp-name">Emerging Technology</span>
+                        </label>
+
+                        <label class="track-pick-card" id="tp-law">
+                            <input type="radio" name="track" value="Law" hidden>
+                            <span class="tp-icon">⚖️</span>
+                            <span class="tp-name">Law</span>
+                        </label>
+
+                        <label class="track-pick-card" id="tp-economics">
+                            <input type="radio" name="track" value="Economics" hidden>
+                            <span class="tp-icon">📊</span>
+                            <span class="tp-name">Economics</span>
+                        </label>
+
+                        <label class="track-pick-card" id="tp-management">
+                            <input type="radio" name="track" value="Management" hidden>
+                            <span class="tp-icon">🏢</span>
+                            <span class="tp-name">Management</span>
+                        </label>
+
+                        <label class="track-pick-card" id="tp-journalism">
+                            <input type="radio" name="track" value="Journalism" hidden>
+                            <span class="tp-icon">📰</span>
+                            <span class="tp-name">Journalism</span>
+                        </label>
+
+                        <label class="track-pick-card" id="tp-commerce">
+                            <input type="radio" name="track" value="Commerce" hidden>
+                            <span class="tp-icon">💹</span>
+                            <span class="tp-name">Commerce</span>
+                        </label>
+
+                        <label class="track-pick-card" id="tp-open">
+                            <input type="radio" name="track" value="Open Idea" hidden>
+                            <span class="tp-icon">💡</span>
+                            <span class="tp-name">Open Idea</span>
+                        </label>
+
+                    </div>
+                    <div class="field-err" id="track-err" role="alert" style="display:none; margin-top: 12px;">Please select a track to continue.</div>
+                </div>
+
+                <!-- PANEL 4 — REVIEW -->
+                <div class="form-panel" id="panel-4">
                     <h3 class="panel-title">Review Your Registration</h3>
                     <p class="panel-desc">Check your details before submitting. You can go back to edit anything.</p>
                     <div class="review-section" id="review-content" aria-live="polite">
@@ -2019,7 +2141,7 @@
         /* =============================================
            CONFIG — Replace with your Apps Script URL
         ============================================= */
-const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzqe_-vQ8B__VwiFyg9DNVi5AGy0oK6So3o5_L8SqueEimmwKs18dLzPUdkZtXSwc6s/exec';
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzrm6mKmnkxM-H2GanxLF0LgjwFFyra76INoPUEYIyGo_jOJno6L1eCSZHkvVCdJC_z/exec';
         /* =============================================
            COUNTDOWN TIMER
            Target: Aug 21, 2026 · 11:59 PM IST
@@ -2070,7 +2192,7 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzqe_-vQ8B__VwiFyg9
            MODAL OPEN / CLOSE
         ============================================= */
         let currentStep = 1;
-        const TOTAL_STEPS = 3;
+        const TOTAL_STEPS = 4;
 
         function openModal() {
             currentStep = 1;
@@ -2170,15 +2292,29 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzqe_-vQ8B__VwiFyg9
         }
 
         /* =============================================
+           VALIDATION — Step 3 (Track)
+        ============================================= */
+        function validateStep3() {
+            var selected = document.querySelector('input[name="track"]:checked');
+            var errEl = document.getElementById('track-err');
+            if (!selected) {
+                errEl.style.display = 'block';
+                return false;
+            }
+            errEl.style.display = 'none';
+            return true;
+        }
+
+        /* =============================================
            NAVIGATION
         ============================================= */
         function goNext() {
             if (currentStep === 1 && !validateStep1()) {
-                // Focus first error
-                const first = document.querySelector('.field.has-error input');
+                var first = document.querySelector('.field.has-error input');
                 if (first) first.focus();
                 return;
             }
+            if (currentStep === 3 && !validateStep3()) return;
             if (currentStep < TOTAL_STEPS) { currentStep++; renderStepUI(); }
         }
 
@@ -2236,6 +2372,10 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzqe_-vQ8B__VwiFyg9
                 html += reviewRow('Phone', val('m4-phone'));
             }
 
+            var track = document.querySelector('input[name="track"]:checked');
+            html += groupLabel('Problem Statement');
+            html += reviewRow('Selected Track', track ? track.value : 'Not selected');
+
             document.getElementById('review-content').innerHTML = html;
         }
 
@@ -2274,18 +2414,13 @@ const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzqe_-vQ8B__VwiFyg9
                     submittedAt:  new Date().toISOString(),
                     teamName:     val('inp-team-name'),
                     college:      val('inp-college'),
+                    track:        (function(){ var t = document.querySelector('input[name="track"]:checked'); return t ? t.value : ''; })(),
                     leaderName:   val('inp-leader-name'),
                     leaderEmail:  val('inp-leader-email'),
                     leaderPhone:  val('inp-leader-phone'),
                     m2Name:       val('m2-name'),
                     m2Email:      val('m2-email'),
                     m2Phone:      val('m2-phone'),
-                    m3Name:       val('m3-name'),
-                    m3Email:      val('m3-email'),
-                    m3Phone:      val('m3-phone'),
-                    m4Name:       val('m4-name'),
-                    m4Email:      val('m4-email'),
-                    m4Phone:      val('m4-phone'),
                 };
 
                 // Show success RIGHT NOW — never block on network
